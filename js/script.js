@@ -3,79 +3,79 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // Dropdown menu
 
-  document.querySelector('.header__nav-btn--one').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__nav-btn--active')
+  document.querySelector('.header__secondary-menu-btn--one').addEventListener('click', function(eve) {
+    eve.target.classList.toggle('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn--two').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--three').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--four').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--five').classList.remove('header__nav-btn--active')
+    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn-list--one').classList.toggle('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--two').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--three').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--four').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--five').classList.remove('header__nav-btn-list--active')
+    document.querySelector('.header__submenu-list--one').classList.toggle('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
   })
 
-  document.querySelector('.header__nav-btn--two').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__nav-btn--active')
+  document.querySelector('.header__secondary-menu-btn--two').addEventListener('click', function(eve) {
+    eve.target.classList.toggle('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn--one').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--three').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--four').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--five').classList.remove('header__nav-btn--active')
+    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn-list--two').classList.toggle('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--one').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--three').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--four').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--five').classList.remove('header__nav-btn-list--active')
+    document.querySelector('.header__submenu-list--two').classList.toggle('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
   })
 
-  document.querySelector('.header__nav-btn--three').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__nav-btn--active')
+  document.querySelector('.header__secondary-menu-btn--three').addEventListener('click', function(eve) {
+    eve.target.classList.toggle('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn--two').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--one').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--four').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--five').classList.remove('header__nav-btn--active')
+    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn-list--three').classList.toggle('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--one').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--two').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--four').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--five').classList.remove('header__nav-btn-list--active')
+    document.querySelector('.header__submenu-list--three').classList.toggle('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
   })
 
-  document.querySelector('.header__nav-btn--four').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__nav-btn--active')
+  document.querySelector('.header__secondary-menu-btn--four').addEventListener('click', function(eve) {
+    eve.target.classList.toggle('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn--two').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--three').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--one').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--five').classList.remove('header__nav-btn--active')
+    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn-list--four').classList.toggle('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--two').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--three').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--one').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--five').classList.remove('header__nav-btn-list--active')
+    document.querySelector('.header__submenu-list--four').classList.toggle('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
   })
 
-  document.querySelector('.header__nav-btn--five').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__nav-btn--active')
+  document.querySelector('.header__secondary-menu-btn--five').addEventListener('click', function(eve) {
+    eve.target.classList.toggle('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn--two').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--three').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--four').classList.remove('header__nav-btn--active')
-    document.querySelector('.header__nav-btn--one').classList.remove('header__nav-btn--active')
+    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
 
-    document.querySelector('.header__nav-btn-list--five').classList.toggle('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--two').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--three').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--four').classList.remove('header__nav-btn-list--active')
-    document.querySelector('.header__nav-btn-list--one').classList.remove('header__nav-btn-list--active')
+    document.querySelector('.header__submenu-list--five').classList.toggle('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
   })
 
 
@@ -83,17 +83,17 @@ window.addEventListener('DOMContentLoaded', function() {
   document.onmouseup=function(event) {
     var target = event.target;
 
-    if (target.className != 'header__nav-btn header__nav-btn--one header__nav-btn--active' && target.className != 'header__nav-btn header__nav-btn--two header__nav-btn--active' && target.className != 'header__nav-btn header__nav-btn--three header__nav-btn--active' && target.className != 'header__nav-btn header__nav-btn--four header__nav-btn--active' && target.className != 'header__nav-btn header__nav-btn--five header__nav-btn--active') {
+    if (target.className != 'header__secondary-menu-btn header__secondary-menu-btn--one header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--two header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--three header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--four header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--five header__secondary-menu-btn--active') {
       closeMenu()  
     }
   }
 
   function closeMenu() {
-    document.querySelectorAll('.header__nav-btn-list').forEach(function(el) {
-      el.classList.remove('header__nav-btn-list--active')
+    document.querySelectorAll('.header__submenu-list').forEach(function(el) {
+      el.classList.remove('header__submenu-list--active')
     })
-    document.querySelectorAll('.header__nav-btn').forEach(function(el) {
-      el.classList.remove('header__nav-btn--active')
+    document.querySelectorAll('.header__secondary-menu-btn').forEach(function(el) {
+      el.classList.remove('header__secondary-menu-btn--active')
     })
   }
 
@@ -287,7 +287,7 @@ window.addEventListener('DOMContentLoaded', function() {
   document.onmousedown=function(event) {
     var target = event.target;
 
-    if (window.innerWidth > 768 && target.className != 'header__form--mobile' && target.className != 'header__input--mobile' && target.className != 'header__form-btn--mobile') {
+    if (window.innerWidth > 768 && target.className != 'header__form header__form--mobile' && target.className != 'header__input header__input--mobile' && target.className != 'header__form-btn header__form-btn--mobile') {
       closeSearch()  
     }
   }
@@ -296,7 +296,7 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.header').classList.remove('header--active')
   }
 
-  document.querySelector('.header__search-btn--close').addEventListener('click', () => {
+  document.querySelector('.header__close-btn').addEventListener('click', () => {
     document.querySelector('.header').classList.remove('header--active')
   })
 
@@ -319,7 +319,7 @@ window.addEventListener('DOMContentLoaded', function() {
   //   if (window.innerWidth <= 768) {
   //     document.querySelector('.header__burger').style.display = 'none'
   //     document.querySelector('.header__logo').style.display = 'none'
-  //     document.querySelector('.header__search-btn--close').style.display = 'block'
+  //     document.querySelector('.header__close-btn').style.display = 'block'
   //     document.querySelector('.header').classList.add('header--active')
   //   }
   // })
@@ -355,7 +355,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
   //     document.querySelector('.header__form--mobile').style.display = 'none'
-  //     document.querySelector('.header__search-btn--close').style.display = 'none'
+  //     document.querySelector('.header__close-btn').style.display = 'none'
       
       
 
@@ -374,7 +374,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
   //     document.querySelector('.header__form--mobile').style.display = 'none'
-  //     document.querySelector('.header__search-btn--close').style.display = 'none'
+  //     document.querySelector('.header__close-btn').style.display = 'none'
 
   //     document.querySelector('.header-container').dataset.search = 'false'
   //   }
@@ -387,7 +387,7 @@ window.addEventListener('DOMContentLoaded', function() {
   //     closeSearch768()
   //   })
   
-  // document.querySelector('.header__search-btn--close').addEventListener('click', () => {
+  // document.querySelector('.header__close-btn').addEventListener('click', () => {
   //   document.querySelector('.header').classList.remove('header--active')
     
     
@@ -395,7 +395,7 @@ window.addEventListener('DOMContentLoaded', function() {
   //   document.querySelector('.header__burger').style.display = 'block'
   //   document.querySelector('.header__logo').style.display = 'block'
 
-  //   document.querySelector('.header__search-btn--close').style.display = 'none'
+  //   document.querySelector('.header__close-btn').style.display = 'none'
   //   document.querySelector('.header__form--mobile').style.display = 'none'
   // })
 
@@ -410,7 +410,7 @@ window.addEventListener('DOMContentLoaded', function() {
   //   if (window.innerWidth <= 1400 && document.querySelector('.header-container').dataset.search == 'false') {
   //     document.querySelector('.header__search-btn--mobile').classList.remove('header__search-btn--hide')
   //     document.querySelector('.header__form--mobile').style.display = 'none'
-  //     document.querySelector('.header__search-btn--close').style.display = 'none'
+  //     document.querySelector('.header__close-btn').style.display = 'none'
   //     document.querySelector('.header').classList.remove('header--active')
   //     document.querySelector('.header__burger').style.display = 'block'
   //     document.querySelector('.header__logo').style.display = 'block'
