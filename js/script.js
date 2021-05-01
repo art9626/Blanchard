@@ -3,90 +3,134 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // Dropdown menu
 
-  document.querySelector('.header__secondary-menu-btn--one').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__secondary-menu-btn--active')
+let secondaryMenuButtons = [];
+let secondaryMenuLists = [];
+let btnIndex;
 
-    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
+document.querySelectorAll('.header__submenu-list').forEach(function (el) {
+  secondaryMenuLists.push(el)
+})
 
-    document.querySelector('.header__submenu-list--one').classList.toggle('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  })
+document.querySelectorAll('.header__secondary-menu-btn').forEach(function (el) {
 
-  document.querySelector('.header__secondary-menu-btn--two').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__secondary-menu-btn--active')
+  secondaryMenuButtons.push(el)
 
-    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
-
-    document.querySelector('.header__submenu-list--two').classList.toggle('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  })
-
-  document.querySelector('.header__secondary-menu-btn--three').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
-
-    document.querySelector('.header__submenu-list--three').classList.toggle('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  })
-
-  document.querySelector('.header__secondary-menu-btn--four').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
-
-    document.querySelector('.header__submenu-list--four').classList.toggle('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  })
-
-  document.querySelector('.header__secondary-menu-btn--five').addEventListener('click', function(eve) {
-    eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-    document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-    document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-
-    document.querySelector('.header__submenu-list--five').classList.toggle('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-    document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-  })
-
-
+  el.addEventListener('click', function(eve) {
+    const click = eve.target
   
-  document.onmouseup=function(event) {
-    var target = event.target;
-
-    if (target.className != 'header__secondary-menu-btn header__secondary-menu-btn--one header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--two header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--three header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--four header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--five header__secondary-menu-btn--active') {
-      closeMenu()  
+    for (let menuBtn of secondaryMenuButtons) {
+  
+      if (click == menuBtn) {
+        menuBtn.classList.toggle('header__secondary-menu-btn--active')
+      }
+  
+      if (click !== menuBtn) {
+        menuBtn.classList.remove('header__secondary-menu-btn--active')
+      }
     }
-  }
+
+    for (let menuBtnIndex in secondaryMenuButtons) {
+      if (click == secondaryMenuButtons[menuBtnIndex]) {
+        btnIndex = menuBtnIndex
+      }
+    }
+
+    for (let menuList of secondaryMenuLists) {
+      if (menuList == secondaryMenuLists[btnIndex]) {
+        menuList.classList.toggle('header__submenu-list--active')
+      }
+
+      if (menuList !== secondaryMenuLists[btnIndex]) {
+        menuList.classList.remove('header__submenu-list--active')
+      }
+    }
+  })
+})
+
+
+
+
+
+
+
+
+
+  // document.querySelector('.header__secondary-menu-btn--one').addEventListener('click', function(eve) {
+  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__submenu-list--one').classList.toggle('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
+  // })
+
+  // document.querySelector('.header__secondary-menu-btn--two').addEventListener('click', function(eve) {
+  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__submenu-list--two').classList.toggle('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
+  // })
+
+  // document.querySelector('.header__secondary-menu-btn--three').addEventListener('click', function(eve) {
+  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__submenu-list--three').classList.toggle('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
+  // })
+
+  // document.querySelector('.header__secondary-menu-btn--four').addEventListener('click', function(eve) {
+  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__submenu-list--four').classList.toggle('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
+  // })
+
+  // document.querySelector('.header__secondary-menu-btn--five').addEventListener('click', function(eve) {
+  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
+  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
+
+  //   document.querySelector('.header__submenu-list--five').classList.toggle('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
+  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
+  // })
+
+
 
   function closeMenu() {
     document.querySelectorAll('.header__submenu-list').forEach(function(el) {
@@ -95,6 +139,14 @@ window.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.header__secondary-menu-btn').forEach(function(el) {
       el.classList.remove('header__secondary-menu-btn--active')
     })
+  }
+  
+  document.onmouseup=function(event) {
+    var target = event.target;
+
+    if (target.className != 'header__secondary-menu-btn header__secondary-menu-btn--one header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--two header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--three header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--four header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--five header__secondary-menu-btn--active') {
+      closeMenu()  
+    }
   }
 
   
@@ -111,12 +163,67 @@ window.addEventListener('DOMContentLoaded', function() {
       document.body.classList.remove('body_menu--active')
       
       const blockID = anchor.getAttribute('href')
+
+      console.log(blockID)
       document.querySelector('' + blockID).scrollIntoView({
         behavior: "smooth",
         block: "start"
       })
     })
   }
+
+
+
+// Gallery modals
+
+document.querySelectorAll('.section-gallery__slide-link').forEach(function (el) {
+  el.addEventListener('click', function (ev) {
+    const modal = ev.currentTarget.dataset.link
+
+    console.log(modal)
+
+    document.body.classList.add('body_menu--active')
+
+    document.querySelector('.section-gallery__modals').classList.add('section-gallery__modals--active')
+
+    document.querySelector(`[data-modal="${modal}"]`).classList.add('section-gallery__modal--active')
+  })
+})
+
+
+function closeModal() {
+  document.body.classList.remove('body_menu--active')
+
+  document.querySelector('.section-gallery__modals').classList.remove('section-gallery__modals--active')
+
+  document.querySelectorAll('.section-gallery__modal').forEach(function (elem) {
+    elem.classList.remove('section-gallery__modal--active')
+  })
+}
+
+
+document.querySelectorAll('.section-gallery__modal-btn').forEach(function(el) {
+  el.addEventListener('click', function (ev) {
+
+    closeModal()
+
+  })
+})
+
+document.querySelector('.section-gallery__modal-overlay').addEventListener('click', function(ev) {
+  const click = ev.target
+
+  if (click.className !== 'section-gallery__modal-img' && click.className !== 'section-gallery__modal-content' && click.className !== 'section-gallery__modal-heading section-gallery__modal-heading--author' && click.className !== 'section-gallery__modal-heading section-gallery__modal-heading--named' && click.className !== 'section-gallery__modal-signature' && click.className !== 'section-gallery__modal-description') {
+
+    closeModal()
+
+  }
+})
+
+
+
+
+
 
 
 // Catalog lang tabs
@@ -144,6 +251,9 @@ window.addEventListener('DOMContentLoaded', function() {
       })
     })
   })
+
+
+  
 
   // Accordion and content tabs
 
@@ -237,6 +347,101 @@ window.addEventListener('DOMContentLoaded', function() {
       })
     })
   })
+
+
+
+
+  // Mobile scroll to art
+
+  function scrollToArt () {
+    
+    
+
+    if (window.innerWidth <= 992) {
+
+
+      // let frenchs = document.querySelectorAll('.section-catalog__accordion-link--french')
+
+      // for (let french of frenchs) {
+      //   french.addEventListener('click', function(e) {
+      //     const scroll = e.currentTarget.dataset.artFrench
+      //     document.querySelector(`[data-box-french="${scroll}"]`).scrollIntoView({
+      //       behavior: 'smooth',
+      //       block: 'start'
+      //     })
+      //   })
+      // }
+
+      document.querySelectorAll('.section-catalog__accordion-link--french').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          const scroll = e.currentTarget.dataset.artFrench
+          document.querySelector(`[data-box-french="${scroll}"]`).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        })
+      })
+    
+      document.querySelectorAll('.section-catalog__accordion-link--german').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          const scroll = e.currentTarget.dataset.artGerman
+          document.querySelector(`[data-box-german="${scroll}"]`).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        })
+      })
+    
+      document.querySelectorAll('.section-catalog__accordion-link--italian').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          const scroll = e.currentTarget.dataset.artItalian
+          document.querySelector(`[data-box-italian="${scroll}"]`).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        })
+      })
+    
+      document.querySelectorAll('.section-catalog__accordion-link--russian').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          const scroll = e.currentTarget.dataset.artRussian
+          document.querySelector(`[data-box-russian="${scroll}"]`).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        })
+      })
+    
+      document.querySelectorAll('.section-catalog__accordion-link--belgian').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          const scroll = e.currentTarget.dataset.artBelgian
+          document.querySelector(`[data-box-belgian="${scroll}"]`).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        })
+      })
+    }
+  }
+
+
+  scrollToArt()
+  
+
+  window.addEventListener('resize', () => {
+    scrollToArt()
+  })
+
+
+
+
+
+
+
+
+
+
+
 
   // Open events
 
