@@ -164,11 +164,12 @@ document.querySelectorAll('.header__secondary-menu-btn').forEach(function (el) {
       
       const blockID = anchor.getAttribute('href')
 
-      console.log(blockID)
-      document.querySelector('' + blockID).scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      })
+      if (blockID !== '#') {
+          document.querySelector(blockID).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
+      }
     })
   }
 
@@ -179,8 +180,6 @@ document.querySelectorAll('.header__secondary-menu-btn').forEach(function (el) {
 document.querySelectorAll('.section-gallery__slide-link').forEach(function (el) {
   el.addEventListener('click', function (ev) {
     const modal = ev.currentTarget.dataset.link
-
-    console.log(modal)
 
     document.body.classList.add('body_menu--active')
 

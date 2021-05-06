@@ -3400,13 +3400,19 @@
 
           <div class="section-contacts__map" id="map"></div>
   
-          <form class="section-contacts__form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+          <form class="section-contacts__form"  enctype="multipart/form-data" action="mail.php" method="POST">
             <h3 class="section-contacts__form-heading">
               Заказать обратный звонок
             </h3>
+            <input type="hidden" name="admin_email[]" value="ddr9626@yandex.ru">
+            <input type="hidden" name="form_subject" value="Художественная галлерея">
             <input class="section-contacts__input" type="text" name="name" placeholder="Имя*" data-validate-field="name">
             <input class="section-contacts__input" type="tel" name="tel" placeholder="Телефон*" data-validate-field="phone">
             <button class="section-contacts__btn" type="submit">Заказать</button>
+            <div class="section-contacts__success-modal">
+              <strong class="section-contacts__modal-content">Заявка отправлена</strong>
+              <button class="section-contacts__modal-btn" type="button"></button>
+            </div>
           </form>
 
           
@@ -3819,7 +3825,7 @@
         name: {
           required: true,
           minLength: 2,
-          maxLenght: 30
+          maxLenght: 30,
         },
 
         phone: {
@@ -3844,9 +3850,34 @@
 
       },
 
-      colorWrong: 'red'
+      colorWrong: 'red',
 
 
+      submitHandler: function(form) {
+        let formData = new FormData(form);
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              document.querySelector('.section-contacts__success-modal').classList.add('section-contacts__success-modal--active');
+            }
+          }
+        }
+
+        xhr.open('POST', 'mail.php', true);
+        xhr.send(formData);
+
+        form.reset();
+
+		  }
+
+
+    });
+
+    document.querySelector('.section-contacts__modal-btn').addEventListener('click', function () {
+      document.querySelector('.section-contacts__success-modal').classList.remove('section-contacts__success-modal--active');
     });
 
 
