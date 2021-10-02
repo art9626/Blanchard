@@ -1,151 +1,63 @@
 window.addEventListener('DOMContentLoaded', function() {
 
 
-// Dropdown menu
+  // Dropdown menu
 
-let secondaryMenuButtons = [];
-let secondaryMenuLists = [];
-let btnIndex;
+  let secondaryMenuButtons = [];
+  let secondaryMenuLists = [];
+  let btnIndex;
 
-document.querySelectorAll('.header__submenu-list').forEach(function (el) {
-  secondaryMenuLists.push(el)
-})
-
-document.querySelectorAll('.header__secondary-menu-btn').forEach(function (el) {
-
-  secondaryMenuButtons.push(el)
-
-  el.addEventListener('click', function(eve) {
-    const click = eve.target
-  
-    for (let menuBtn of secondaryMenuButtons) {
-  
-      if (click == menuBtn) {
-        menuBtn.classList.toggle('header__secondary-menu-btn--active')
-      }
-  
-      if (click !== menuBtn) {
-        menuBtn.classList.remove('header__secondary-menu-btn--active')
-      }
-    }
-
-    for (let menuBtnIndex in secondaryMenuButtons) {
-      if (click == secondaryMenuButtons[menuBtnIndex]) {
-        btnIndex = menuBtnIndex
-      }
-    }
-
-    for (let menuList of secondaryMenuLists) {
-      if (menuList == secondaryMenuLists[btnIndex]) {
-        menuList.classList.toggle('header__submenu-list--active')
-      }
-
-      if (menuList !== secondaryMenuLists[btnIndex]) {
-        menuList.classList.remove('header__submenu-list--active')
-      }
-    }
+  document.querySelectorAll('.header__submenu-list').forEach(function (el) {
+    secondaryMenuLists.push(el)
   })
-})
 
+  document.querySelectorAll('.header__secondary-menu-btn').forEach(function (el) {
 
+    secondaryMenuButtons.push(el)
 
+    el.addEventListener('click', function(eve) {
+      const click = eve.target
+    
+      for (let menuBtn of secondaryMenuButtons) {
+        if (click == menuBtn) {
+          menuBtn.classList.toggle('header__secondary-menu-btn--active')
+        }
+    
+        if (click !== menuBtn) {
+          menuBtn.classList.remove('header__secondary-menu-btn--active')
+        }
+      }
 
+      for (let menuBtnIndex in secondaryMenuButtons) {
+        if (click == secondaryMenuButtons[menuBtnIndex]) {
+          btnIndex = menuBtnIndex
+        }
+      }
 
+      for (let menuList of secondaryMenuLists) {
+        if (menuList == secondaryMenuLists[btnIndex]) {
+          menuList.classList.toggle('header__submenu-list--active')
+        }
 
-
-
-
-  // document.querySelector('.header__secondary-menu-btn--one').addEventListener('click', function(eve) {
-  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__submenu-list--one').classList.toggle('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  // })
-
-  // document.querySelector('.header__secondary-menu-btn--two').addEventListener('click', function(eve) {
-  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__submenu-list--two').classList.toggle('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  // })
-
-  // document.querySelector('.header__secondary-menu-btn--three').addEventListener('click', function(eve) {
-  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__submenu-list--three').classList.toggle('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  // })
-
-  // document.querySelector('.header__secondary-menu-btn--four').addEventListener('click', function(eve) {
-  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--five').classList.remove('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__submenu-list--four').classList.toggle('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--five').classList.remove('header__submenu-list--active')
-  // })
-
-  // document.querySelector('.header__secondary-menu-btn--five').addEventListener('click', function(eve) {
-  //   eve.target.classList.toggle('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__secondary-menu-btn--two').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--three').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--four').classList.remove('header__secondary-menu-btn--active')
-  //   document.querySelector('.header__secondary-menu-btn--one').classList.remove('header__secondary-menu-btn--active')
-
-  //   document.querySelector('.header__submenu-list--five').classList.toggle('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--two').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--three').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--four').classList.remove('header__submenu-list--active')
-  //   document.querySelector('.header__submenu-list--one').classList.remove('header__submenu-list--active')
-  // })
-
-
-
-  function closeMenu() {
-    document.querySelectorAll('.header__submenu-list').forEach(function(el) {
-      el.classList.remove('header__submenu-list--active')
+        if (menuList !== secondaryMenuLists[btnIndex]) {
+          menuList.classList.remove('header__submenu-list--active')
+        }
+      }
     })
-    document.querySelectorAll('.header__secondary-menu-btn').forEach(function(el) {
-      el.classList.remove('header__secondary-menu-btn--active')
-    })
-  }
+  })
+
+
   
   document.onmouseup=function(event) {
     var target = event.target;
 
     if (target.className != 'header__secondary-menu-btn header__secondary-menu-btn--one header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--two header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--three header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--four header__secondary-menu-btn--active' && target.className != 'header__secondary-menu-btn header__secondary-menu-btn--five header__secondary-menu-btn--active') {
-      closeMenu()  
+      document.querySelectorAll('.header__submenu-list').forEach(function(el) {
+        el.classList.remove('header__submenu-list--active')
+      })
+      document.querySelectorAll('.header__secondary-menu-btn').forEach(function(el) {
+        el.classList.remove('header__secondary-menu-btn--active')
+      }) 
     }
   }
 
@@ -205,7 +117,6 @@ document.querySelectorAll('.section-gallery__modal-btn').forEach(function(el) {
   el.addEventListener('click', function (ev) {
 
     closeModal()
-
   })
 })
 
@@ -215,7 +126,6 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
   if (click.className !== 'section-gallery__modal-img' && click.className !== 'section-gallery__modal-content' && click.className !== 'section-gallery__modal-heading section-gallery__modal-heading--author' && click.className !== 'section-gallery__modal-heading section-gallery__modal-heading--named' && click.className !== 'section-gallery__modal-signature' && click.className !== 'section-gallery__modal-description') {
 
     closeModal()
-
   }
 })
 
@@ -256,22 +166,26 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
 
   // Accordion and content tabs
 
+  function addActive(country , art) {
+    document.querySelectorAll(`.section-catalog__box--${country}`).forEach(function(elBox) {
+      elBox.classList.remove('section-catalog__box--active')
+
+      document.querySelector(`[data-box-${country}="${art}"]`).classList.add('section-catalog__box--active')
+    })
+
+    document.querySelectorAll(`.section-catalog__accordion-link--${country}`).forEach(function(elLink) {
+      elLink.classList.remove('section-catalog__accordion-link--active')
+
+      document.querySelector(`[data-art-${country}="${art}"]`).classList.add('section-catalog__accordion-link--active')
+    })
+  }
+
 
   document.querySelectorAll('.section-catalog__accordion-link--french').forEach(function(elLink) {
     elLink.addEventListener('click', function(ev) {
       const art = ev.currentTarget.dataset.artFrench
 
-      document.querySelectorAll('.section-catalog__box--french').forEach(function(elBox) {
-        elBox.classList.remove('section-catalog__box--active')
-
-        document.querySelector(`[data-box-french="${art}"]`).classList.add('section-catalog__box--active')
-      })
-
-      document.querySelectorAll('.section-catalog__accordion-link--french').forEach(function(elLink) {
-        elLink.classList.remove('section-catalog__accordion-link--active')
-
-        document.querySelector(`[data-art-french="${art}"]`).classList.add('section-catalog__accordion-link--active')
-      })
+      addActive('french', art);
     })
   })
 
@@ -279,17 +193,7 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
     elLink.addEventListener('click', function(ev) {
       const art = ev.currentTarget.dataset.artGerman
 
-      document.querySelectorAll('.section-catalog__box--german').forEach(function(elBox) {
-        elBox.classList.remove('section-catalog__box--active')
-
-        document.querySelector(`[data-box-german="${art}"]`).classList.add('section-catalog__box--active')
-      })
-
-      document.querySelectorAll('.section-catalog__accordion-link--german').forEach(function(elLink) {
-        elLink.classList.remove('section-catalog__accordion-link--active')
-
-        document.querySelector(`[data-art-german="${art}"]`).classList.add('section-catalog__accordion-link--active')
-      })
+      addActive('german', art);
     })
   })
 
@@ -297,17 +201,7 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
     elLink.addEventListener('click', function(ev) {
       const art = ev.currentTarget.dataset.artItalian
 
-      document.querySelectorAll('.section-catalog__box--italian').forEach(function(elBox) {
-        elBox.classList.remove('section-catalog__box--active')
-
-        document.querySelector(`[data-box-italian="${art}"]`).classList.add('section-catalog__box--active')
-      })
-
-      document.querySelectorAll('.section-catalog__accordion-link--italian').forEach(function(elLink) {
-        elLink.classList.remove('section-catalog__accordion-link--active')
-
-        document.querySelector(`[data-art-italian="${art}"]`).classList.add('section-catalog__accordion-link--active')
-      })
+      addActive('italian', art);
     })
   })
 
@@ -315,17 +209,7 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
     elLink.addEventListener('click', function(ev) {
       const art = ev.currentTarget.dataset.artRussian
 
-      document.querySelectorAll('.section-catalog__box--russian').forEach(function(elBox) {
-        elBox.classList.remove('section-catalog__box--active')
-
-        document.querySelector(`[data-box-russian="${art}"]`).classList.add('section-catalog__box--active')
-      })
-
-      document.querySelectorAll('.section-catalog__accordion-link--russian').forEach(function(elLink) {
-        elLink.classList.remove('section-catalog__accordion-link--active')
-
-        document.querySelector(`[data-art-russian="${art}"]`).classList.add('section-catalog__accordion-link--active')
-      })
+      addActive('russian', art);
     })
   })
 
@@ -333,17 +217,7 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
     elLink.addEventListener('click', function(ev) {
       const art = ev.currentTarget.dataset.artBelgian
 
-      document.querySelectorAll('.section-catalog__box--belgian').forEach(function(elBox) {
-        elBox.classList.remove('section-catalog__box--active')
-
-        document.querySelector(`[data-box-belgian="${art}"]`).classList.add('section-catalog__box--active')
-      })
-
-      document.querySelectorAll('.section-catalog__accordion-link--belgian').forEach(function(elLink) {
-        elLink.classList.remove('section-catalog__accordion-link--active')
-
-        document.querySelector(`[data-art-belgian="${art}"]`).classList.add('section-catalog__accordion-link--active')
-      })
+      addActive('belgian', art);
     })
   })
 
@@ -352,72 +226,50 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
 
   // Mobile scroll to art
 
+  function smoothScrollToArt(country, art) {
+    document.querySelector(`[data-box-${country}="${art}"]`).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+
+
   function scrollToArt () {
-    
-    
 
     if (window.innerWidth <= 992) {
 
-
-      // let frenchs = document.querySelectorAll('.section-catalog__accordion-link--french')
-
-      // for (let french of frenchs) {
-      //   french.addEventListener('click', function(e) {
-      //     const scroll = e.currentTarget.dataset.artFrench
-      //     document.querySelector(`[data-box-french="${scroll}"]`).scrollIntoView({
-      //       behavior: 'smooth',
-      //       block: 'start'
-      //     })
-      //   })
-      // }
-
       document.querySelectorAll('.section-catalog__accordion-link--french').forEach(function (el) {
         el.addEventListener('click', function (e) {
-          const scroll = e.currentTarget.dataset.artFrench
-          document.querySelector(`[data-box-french="${scroll}"]`).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
+          const art = e.currentTarget.dataset.artFrench
+          smoothScrollToArt('french', art)
         })
       })
     
       document.querySelectorAll('.section-catalog__accordion-link--german').forEach(function (el) {
         el.addEventListener('click', function (e) {
-          const scroll = e.currentTarget.dataset.artGerman
-          document.querySelector(`[data-box-german="${scroll}"]`).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
+          const art = e.currentTarget.dataset.artGerman
+          smoothScrollToArt('german', art)
         })
       })
     
       document.querySelectorAll('.section-catalog__accordion-link--italian').forEach(function (el) {
         el.addEventListener('click', function (e) {
-          const scroll = e.currentTarget.dataset.artItalian
-          document.querySelector(`[data-box-italian="${scroll}"]`).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
+          const art = e.currentTarget.dataset.artItalian
+          smoothScrollToArt('italian', art)
         })
       })
     
       document.querySelectorAll('.section-catalog__accordion-link--russian').forEach(function (el) {
         el.addEventListener('click', function (e) {
-          const scroll = e.currentTarget.dataset.artRussian
-          document.querySelector(`[data-box-russian="${scroll}"]`).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
+          const art = e.currentTarget.dataset.artRussian
+          smoothScrollToArt('russian', art)
         })
       })
     
       document.querySelectorAll('.section-catalog__accordion-link--belgian').forEach(function (el) {
         el.addEventListener('click', function (e) {
-          const scroll = e.currentTarget.dataset.artBelgian
-          document.querySelector(`[data-box-belgian="${scroll}"]`).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
+          const art = e.currentTarget.dataset.artBelgian
+          smoothScrollToArt('belgian', art)
         })
       })
     }
@@ -486,7 +338,9 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
     document.querySelector('.header').classList.add('header--active')
   })
 
-
+  function closeSearch() {
+    document.querySelector('.header').classList.remove('header--active')
+  }
 
   document.onmousedown=function(event) {
     var target = event.target;
@@ -496,12 +350,8 @@ document.querySelector('.section-gallery__modal-overlay').addEventListener('clic
     }
   }
 
-  function closeSearch() {
-    document.querySelector('.header').classList.remove('header--active')
-  }
-
   document.querySelector('.header__close-btn').addEventListener('click', () => {
-    document.querySelector('.header').classList.remove('header--active')
+    closeSearch()
   })
 
 

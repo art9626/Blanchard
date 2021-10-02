@@ -356,7 +356,7 @@
       </div>
 
 
-      <div class="section-hero__slider swiper-container">
+      <div class="section-hero__slider swiper-container swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -438,7 +438,7 @@
           
           
 
-          <div class="section-gallery__slider swiper-container">
+          <div class="section-gallery__slider swiper-container swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -1812,8 +1812,6 @@
 
     </section>
 
-
-
     <section class="section-catalog" id="catalog">
       <div class="container section-catalog__container">
         <div class="section-catalog__head">
@@ -2738,7 +2736,7 @@
           События
         </h2>
 
-        <div class="section-events__slider swiper-container" data-mobile="false">
+        <div class="section-events__slider swiper-container swiper" data-mobile="false">
 
           <div class="section-events__swiper-wrapper swiper-wrapper">
 
@@ -3056,7 +3054,7 @@
 
           
 
-          <div class="section-publications__slider swiper-container" data-desctop="false">
+          <div class="section-publications__slider swiper-container swiper" data-desctop="false">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
@@ -3206,7 +3204,6 @@
       </div>
     </section>
 
-
     <section class="section-projects" id="projects">
       <div class="container section-projects__container">
         <h2 class="section-heading section-projects__heading">
@@ -3270,7 +3267,7 @@
             </svg>
           </div>
 
-          <div class="section-projects__slider swiper-container">
+          <div class="section-projects__slider swiper-container swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               
@@ -3458,7 +3455,6 @@
       
     </footer>
 
-
   </main>
 
 
@@ -3515,7 +3511,10 @@
     var mySwiper = new Swiper('.section-gallery__slider', {
 
       slidesPerView: 1,
-      slidesPerColumn: 1,
+      // slidesPerColumn: 1,
+      grid: {
+        rows: 1,
+      },
       spaceBetween: 20,
       slidesPerGroup: 1,
 
@@ -3533,7 +3532,10 @@
 
         1600: {
           slidesPerView: 3,
-          slidesPerColumn: 2,
+          // slidesPerColumn: 2,
+          grid: {
+            rows: 2,
+          },
           spaceBetween: 50,
           slidesPerGroup: 3,
           allowTouchMove: false,
@@ -3541,38 +3543,44 @@
 
         1400: {
           slidesPerView: 3,
-          slidesPerColumn: 2,
+          // slidesPerColumn: 2,
+          grid: {
+            rows: 2,
+          },
           spaceBetween: 15,
           slidesPerGroup: 3,
         },
 
         1025: {
           slidesPerView: 2,
-          slidesPerColumn: 2,
+          // slidesPerColumn: 2,
+          grid: {
+            rows: 2,
+          },
           spaceBetween: 30,
           slidesPerGroup: 2,
         },
 
-        950: {
-          slidesPerView: 2,
-          slidesPerColumn: 2,
-          spaceBetween: 34,
-          slidesPerGroup: 2,
-        },
+      //   950: {
+      //     slidesPerView: 2,
+      //     slidesPerColumn: 2,
+      //     spaceBetween: 34,
+      //     slidesPerGroup: 2,
+      //   },
 
-        769: {
-          slidesPerView: 2,
-          slidesPerColumn: 2,
-          spaceBetween: 15,
-          slidesPerGroup: 2,
-        },
+      //   769: {
+      //     slidesPerView: 2,
+      //     slidesPerColumn: 2,
+      //     spaceBetween: 15,
+      //     slidesPerGroup: 2,
+      //   },
 
-        657: {
-          slidesPerView: 2,
-          slidesPerColumn: 2,
-          spaceBetween: 34,
-          slidesPerGroup: 2,
-        },
+      //   657: {
+      //     slidesPerView: 2,
+      //     slidesPerColumn: 2,
+      //     spaceBetween: 34,
+      //     slidesPerGroup: 2,
+      //   },
       }
 
     })
@@ -3624,7 +3632,7 @@
 
         document.querySelector('.section-events__slider').dataset.mobile = 'false'
 
-        if (document.querySelector('.section-events__slider').classList.contains('swiper-container-initialized')) {
+        if (document.querySelector('.section-events__slider').classList.contains('swiper-container swiper-initialized')) {
           mySwiper3.destroy()
         }
       }
@@ -3715,7 +3723,7 @@
 
         document.querySelector('.section-publications__slider').dataset.desctop = 'false'
 
-        if (document.querySelector('.section-publications__slider').classList.contains('swiper-container-initialized')) {
+        if (document.querySelector('.section-publications__slider').classList.contains('swiper-container swiper-initialized')) {
           mySwiper1.destroy()
         }
       }
